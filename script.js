@@ -1,29 +1,40 @@
-var button = document.getElementById('button');
+var buttonRoll = document.getElementById('buttonRoll');
+var buttonHold = document.getElementById('buttonHold');
 
 let player = 1
 
 let dice = 0
 
-let playerRound = 0
+let playerOneRound = 0
+let playerOneGlobal = 0
 
-function rollDice() {
-  if (player == 1) {
+
+if (player = 1) {
+  function rollDice() {
     dice = Math.floor(Math.random() * (6 - 1) + 1);
-    updateDisplayDice(dice)
-    console.log(dice)
-    playerRound = playerRound + dice
-    console.log(playerRound)
-    updateDisplayRound(playerRound)
+    playerOneRound = playerOneRound + dice
+    playerOneGlobal = playerOneGlobal
+    updateDisplay(dice, playerOneRound, playerOneGlobal)
+  }
+  function hold() {
+    playerOneGlobal = playerOneRound + playerOneGlobal
+    playerOneRound = 0
+    updateDisplay(0, 0, playerOneGlobal)
   }
 }
 
-button.addEventListener('click', rollDice);
-
-
-function updateDisplayDice(diceValue) {
-    document.getElementById("dice").innerHTML = diceValue;
+function reset() {
+  updateDisplay(0, 0, 0)
 }
 
-function updateDisplayRound(roundValue) {
-    document.getElementById("round").innerHTML = roundValue;
+buttonRoll.addEventListener('click', rollDice);
+
+buttonHold.addEventListener('click', hold);
+
+
+function updateDisplay(diceValue, roundValue, globalValue) {
+  document.getElementById("dice").innerHTML = diceValue;
+  document.getElementById("round").innerHTML = roundValue;
+  document.getElementById("global").innerHTML = globalValue;
+
 }
