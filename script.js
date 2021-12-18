@@ -1,16 +1,29 @@
+var button = document.getElementById('button');
 
-var dice = 0;
+let player = 1
+
+let dice = 0
+
+let playerRound = 0
 
 function rollDice() {
-    updateDisplay(Math.floor(Math.random() * (6 - 1) + 1));
+  if (player == 1) {
+    dice = Math.floor(Math.random() * (6 - 1) + 1);
+    updateDisplayDice(dice)
+    console.log(dice)
+    playerRound = playerRound + dice
+    console.log(playerRound)
+    updateDisplayRound(playerRound)
+  }
 }
 
-function updateDisplay(diceValue) {
+button.addEventListener('click', rollDice);
+
+
+function updateDisplayDice(diceValue) {
     document.getElementById("dice").innerHTML = diceValue;
 }
 
-
-function setNewGame() {
-    counterVal = 0;
-    updateDisplay(counterVal);
+function updateDisplayRound(roundValue) {
+    document.getElementById("round").innerHTML = roundValue;
 }
