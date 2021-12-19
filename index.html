@@ -24,9 +24,18 @@
 		<section>
 
 			<div class="card-group">
+
+				<div class="button-group btn-top">
+					<button class="btn btn-secondary" id="buttonReset">New Game</button>
+				</div>
+
+				<div class="dice">
+					<img id="dice-img" src="images/dice1.png">
+				</div>
+
 				<div class="card">
 					<div class="card-body text-center">
-						<h1 class="card-title">Player 1</h1>
+						<h1 class="card-title">Player 1 <span class="turn" id="player1"></span></h1>
 						<div class="round-counter bg-danger">
 							<h2>Current</h2>
 							<h2 id="round-one">0</h2>
@@ -39,7 +48,7 @@
 				</div>
 				<div class="card">
 					<div class="card-body text-center">
-						<h1 class="card-title">Player 2</h1>
+						<h1 class="card-title">Player 2 <span class="turn" id="player2"></span></h1>
 						<div class="round-counter bg-danger">
 							<h2>Current</h2>
 							<h2 id="round-two">0</h2>
@@ -50,25 +59,11 @@
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<h1>Player One</h1>
-			<h2>Dice</h2>
-			<h3 id="dice-one">0</h3>
-
-
-			<h1>Player Two</h1>
-			<h2>Dice</h2>
-			<h3 id="dice-two">0</h3>
-
-
-
-
-			<div>
-				<button id="buttonRoll">Roll Dice</button>
-				<button id="buttonHold">Hold</button>
-				<button id="buttonReset">Reset</button>
-
+				<div class="button-group btn-end">
+					<button class="btn btn-secondary" id="buttonHold">Hold</button>
+					<button class="btn btn-secondary" id="buttonRoll">Roll Dice</button>
+				</div>
 
 			</div>
 
