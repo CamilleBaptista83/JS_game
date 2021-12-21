@@ -119,6 +119,16 @@ function hold() {
       player1.style.display = "inline-block";
       player2.style.display = "none";
     } else {
+      swal({
+        icon: "success",
+        title: "Player 2 Win",
+        button: "Play Again",
+      })
+        .then((value) => {
+          if (value = true) {
+            reset()
+          }
+        })
       updateDisplay(1, dice, playerOneRound, playerOneGlobal)
     }
 
