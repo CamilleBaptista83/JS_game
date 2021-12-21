@@ -14,7 +14,7 @@ let player = 1
 
 let dice = 0
 
-let playerOneRound = 96
+let playerOneRound = 0
 let playerOneGlobal = 0
 
 let playerTwoRound = 0
