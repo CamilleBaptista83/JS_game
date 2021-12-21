@@ -20,6 +20,8 @@ let playerTwoGlobal = 0
 
 // function
 
+//image en fonction du dé
+
 function setImageDice(dice) {
   switch (dice) {
     case 1:
@@ -45,6 +47,8 @@ function setImageDice(dice) {
   }
 }
 
+
+// fonction appelée lorsqu'on clique sur rollDice 
 
 function rollDice() {
   if (player === 1) {
@@ -76,6 +80,8 @@ function rollDice() {
   }
 }
 
+
+//Fonction appelée lorsqu'on click sur hold
 
 function hold() {
   if (player === 1) {
@@ -116,6 +122,9 @@ function reset() {
   playerTwoGlobal = 0
   updateDisplay('reset', dice, playerOneRound, playerOneGlobal)
 }
+
+
+//Affichage dans le DOM
 
 function updateDisplay(player, diceValue, roundValue, globalValue) {
   if (player == 1) {

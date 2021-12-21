@@ -21,55 +21,59 @@
 <body>
 
 	<main>
-		<section>
 
-			<div class="card-group">
+		<div class="card-group">
 
-				<div class="button-group btn-top">
-					<button class="btn btn-secondary" id="buttonReset">New Game</button>
-				</div>
+			<div class="button-group btn-top">
+				<button class="btn" id="buttonReset"> <img
+						src="https://img.icons8.com/material-outlined/30/ff4a4a/plus--v1.png" />New Game</button>
+			</div>
 
-				<div class="dice">
-					<h2>Dice</h2>
-					<h3 id="dice">0</h3>
-					<img id="dice-img" src="images/dice1.png">
-				</div>
+			<div class="dice">
+				<h3 id="dice">0</h3>
+				<img id="dice-img" src="images/dice1.png">
+			</div>
 
-				<div class="card">
-					<div class="card-body text-center">
+			<div class="card card1">
+				<div class="card-body player">
+					<div class="global text-center">
 						<h1 class="card-title">Player 1 <span class="turn" id="player1"></span></h1>
-						<div class="round-counter bg-danger">
+						<h3 id="global-one" class="global-counter">0</h3>
+					</div>
+					<div class="round-counter text-center">
+						<div>
 							<h2>Current</h2>
 							<h2 id="round-one">0</h2>
 						</div>
-						<div class="round-counter bg-danger">
-							<h2>Global</h2>
-							<h3 id="global-one">0</h3>
-						</div>
 					</div>
 				</div>
-				<div class="card">
-					<div class="card-body text-center">
+			</div>
+			<div class="card card2">
+				<div class="card-body player">
+					<div class="global text-center">
 						<h1 class="card-title">Player 2 <span class="turn" id="player2"></span></h1>
-						<div class="round-counter bg-danger">
+						<h3 id="global-two" class="global-counter">0</h3>
+					</div>
+					<div class="round-counter text-center">
+						<div>
 							<h2>Current</h2>
 							<h2 id="round-two">0</h2>
 						</div>
-						<div class="round-counter bg-danger">
-							<h2>Global</h2>
-							<h3 id="global-two">0</h3>
-						</div>
 					</div>
 				</div>
-
-				<div class="button-group btn-end">
-					<button class="btn btn-secondary" id="buttonHold">Hold</button>
-					<button class="btn btn-secondary" id="buttonRoll">Roll Dice</button>
-				</div>
-
 			</div>
 
-		</section>
+			<div class="button-group btn-end">
+				<button class="btn" id="buttonRoll"><img
+						src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/60/ff4a4a/external-dice-casino-kiranshastry-lineal-kiranshastry-1.png" />
+					Roll Dice</button>
+				<button class="btn" id="buttonHold"><img src="https://img.icons8.com/ios/60/ff4a4a/hand-rock.png"/>
+					Hold</button>
+			</div>
+
+		</div>
+
+
 	</main>
 
 	<script src="script.js"></script>

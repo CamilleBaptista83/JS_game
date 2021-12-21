@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,300&family=Lato:ital,wght@0,400;1,100;1,700&family=Poppins:wght@100;200;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
+
 
 main {
     font-family: 'Lato', sans-serif;
@@ -6,12 +7,17 @@ main {
     background-image: url(https://images.unsplash.com/photo-1570303345338-e1f0eddf4946?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1071&q=80);
     background-size: cover;
     padding: 3rem;
+    font-weight: 300;
 }
 
 #player1{
     display: inline-block;
 }
 #player2{
+    display: none;
+}
+
+#dice{
     display: none;
 }
 
@@ -22,9 +28,28 @@ main {
     left: 0;
     right: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
     z-index: 3;
+    width: 20rem;
 }
 
+.btn{
+    margin: 1rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    transition: 500ms ease;
+}
+
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+ }
 .btn-top{
     top: 3rem;
 }
@@ -42,12 +67,48 @@ section{
     height: 100%;
     position: relative;
 }
+.card{
+    border: none;
+}
+
+.card1{
+    background-color: rgb(219, 219, 219);
+}
+
+.player{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.global{
+    flex: 1 1 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.global-counter{
+    font-size: 4rem;
+    color: rgb(255, 74, 74);
+}
+
+.round-counter{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 20rem;
+}
+
+.round-counter div{
+    background-color: rgb(255, 74, 74);
+    padding: 0.5rem 1rem;
+}
 
 .turn{
     display: inline-block;
     height: .8rem;
     width: .8rem;
-    background-color: red;
+    background-color: rgb(255, 74, 74);
     border-radius: 50%;
 }
 
@@ -67,8 +128,6 @@ section{
 
 #dice-img{
     background-color: white;
-}
-
-.round-counter{
-    margin: 0 15rem;
+    border-radius: .4rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.158);
 }
