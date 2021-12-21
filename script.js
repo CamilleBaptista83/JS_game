@@ -60,6 +60,9 @@ function rollDice() {
       setImageDice(dice)
       playerOneGlobal = playerOneGlobal
       updateDisplay(1, dice, playerOneRound, playerOneGlobal)
+      player = 2
+      player1.style.display = "none";
+      player2.style.display = "inline-block";
     } else {
       playerOneRound = playerOneRound + dice
       setImageDice(dice)
@@ -73,6 +76,9 @@ function rollDice() {
       setImageDice(dice)
       playerTwoGlobal = playerTwoGlobal
       updateDisplay(2, dice, playerTwoRound, playerTwoGlobal)
+      player = 1
+      player1.style.display = "inline-block";
+      player2.style.display = "none";
     } else {
       playerTwoRound = playerTwoRound + dice
       setImageDice(dice)
