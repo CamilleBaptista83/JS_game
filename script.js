@@ -47,46 +47,69 @@ function setImageDice(dice) {
 
 
 function rollDice() {
-  if (player == 1) {
-    dice = Math.floor(Math.random() * (6 - 1) + 1);
-    setImageDice(dice)
-    playerOneRound = playerOneRound + dice
-    playerOneGlobal = playerOneGlobal
-    updateDisplay(1, dice, playerOneRound, playerOneGlobal)
+  if (player === 1) {
+    dice = Math.floor(Math.random() * (7 - 1) + 1);
+    if (dice === 1) {
+      playerOneRound = 0
+      setImageDice(dice)
+      playerOneGlobal = playerOneGlobal
+      updateDisplay(1, dice, playerOneRound, playerOneGlobal)
+    } else {
+      playerOneRound = playerOneRound + dice
+      setImageDice(dice)
+      playerOneGlobal = playerOneGlobal
+      updateDisplay(1, dice, playerOneRound, playerOneGlobal)
+    }
   } else {
-    dice = Math.floor(Math.random() * (6 - 1) + 1);
-    setImageDice(dice)
-    playerTwoRound = playerTwoRound + dice
-    playerTwoGlobal = playerTwoGlobal
-    updateDisplay(2, dice, playerTwoRound, playerTwoGlobal)
+    dice = Math.floor(Math.random() * (7 - 1) + 1);
+    if (dice === 1) {
+      playerTwoRound = 0
+      setImageDice(dice)
+      playerTwoGlobal = playerTwoGlobal
+      updateDisplay(2, dice, playerTwoRound, playerTwoGlobal)
+    } else {
+      playerTwoRound = playerTwoRound + dice
+      setImageDice(dice)
+      playerTwoGlobal = playerTwoGlobal
+      updateDisplay(2, dice, playerTwoRound, playerTwoGlobal)
+    }
   }
 }
 
 
 function hold() {
-  if (player == 1) {
+  if (player === 1) {
     playerOneGlobal = playerOneRound + playerOneGlobal
-    playerOneRound = 0
-    dice = 0
-    updateDisplay(1, dice, playerOneRound, playerOneGlobal)
-    player = 2
-    player1.style.display = "none";
-    player2.style.display = "inline-block";
+    if (playerOneGlobal < 100) {
+      playerOneRound = 0
+      dice = 0
+      updateDisplay(1, dice, playerOneRound, playerOneGlobal)
+      player = 2
+      player1.style.display = "none";
+      player2.style.display = "inline-block";
+    } else {
+      updateDisplay(1, dice, playerOneRound, playerOneGlobal)
+    }
+
   } else {
     playerTwoGlobal = playerTwoRound + playerTwoGlobal
-    playerTwoRound = 0
-    dice = 0
-    updateDisplay(2, dice, playerTwoRound, playerTwoGlobal)
-    player = 1
-    player1.style.display = "inline-block";
-    player2.style.display = "none";
+    if (playerTwoGlobal < 100) {
+      playerTwoRound = 0
+      dice = 0
+      updateDisplay(2, dice, playerTwoRound, playerTwoGlobal)
+      player = 1
+      player1.style.display = "inline-block";
+      player2.style.display = "none";
+    } else {
+      updateDisplay(1, dice, playerOneRound, playerOneGlobal)
+    }
 
   }
 }
 
-
 function reset() {
   dice = 0
+  setImageDice(1)
   playerOneRound = 0
   playerOneGlobal = 0
   playerTwoRound = 0
