@@ -141,6 +141,8 @@ section{
     }
     main{
         padding: 1rem;
+        height: auto;
+
     }
     .player{
         display: block;
