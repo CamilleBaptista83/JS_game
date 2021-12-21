@@ -1,18 +1,20 @@
-var buttonRoll = document.getElementById('buttonRoll');
-var buttonHold = document.getElementById('buttonHold');
-var buttonReset = document.getElementById('buttonReset');
+const buttonRoll = document.getElementById('buttonRoll');
+const buttonHold = document.getElementById('buttonHold');
+const buttonReset = document.getElementById('buttonReset');
 
-var player1 = document.getElementById('player1');
-var player2 = document.getElementById('player2');
+const player1 = document.getElementById('player1');
+const player2 = document.getElementById('player2');
 
-var diceImg = document.getElementById('dice-img')
+const diceImg = document.getElementById('dice-img')
+
+const modal = document.getElementById('modal')
 
 
 let player = 1
 
 let dice = 0
 
-let playerOneRound = 0
+let playerOneRound = 96
 let playerOneGlobal = 0
 
 let playerTwoRound = 0
@@ -94,6 +96,16 @@ function hold() {
       player1.style.display = "none";
       player2.style.display = "inline-block";
     } else {
+      swal({
+        icon: "success",
+        title: "Player 1 Win",
+        button: "Play Again",
+      })
+        .then((value) => {
+          if (value = true) {
+            reset()
+          }
+        })
       updateDisplay(1, dice, playerOneRound, playerOneGlobal)
     }
 
