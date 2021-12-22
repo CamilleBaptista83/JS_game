@@ -143,6 +143,7 @@ function hold() {
 
 function reset() {
   dice = 0
+  player = 1
   setImageDice(1)
   playerOneRound = 0
   playerOneGlobal = 0
