@@ -7,9 +7,6 @@ const player2 = document.getElementById('player2');
 
 const diceImg = document.getElementById('dice-img')
 
-const modal = document.getElementById('modal')
-
-
 let player = 1
 
 let dice = 0
@@ -20,7 +17,6 @@ let playerOneGlobal = 0
 let playerTwoRound = 0
 let playerTwoGlobal = 0
 
-// function
 
 //image en fonction du dé
 
@@ -49,6 +45,7 @@ function setImageDice(dice) {
   }
 }
 
+// functions
 
 // fonction appelée lorsqu'on clique sur rollDice 
 
@@ -175,16 +172,18 @@ function updateDisplay(player, diceValue, roundValue, globalValue) {
 
 }
 
-//affiche de la pastille rouge du tour du joueur
+
+//Affichage de la pastille lorsque c'est le tour du joueur
 
 function displayPlayer1() {
   player1.style.display = "inline-block";
   player2.style.display = "none";
 }
 
-function displayPLayer2() {
+function displayPlayer2() {
   player1.style.display = "none";
   player2.style.display = "inline-block";
+
 }
 
 buttonRoll.addEventListener('click', rollDice);
