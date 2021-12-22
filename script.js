@@ -61,8 +61,7 @@ function rollDice() {
       playerOneGlobal = playerOneGlobal
       updateDisplay(1, dice, playerOneRound, playerOneGlobal)
       player = 2
-      player1.style.display = "none";
-      player2.style.display = "inline-block";
+      displayPlayer2()
     } else {
       playerOneRound = playerOneRound + dice
       setImageDice(dice)
@@ -77,8 +76,7 @@ function rollDice() {
       playerTwoGlobal = playerTwoGlobal
       updateDisplay(2, dice, playerTwoRound, playerTwoGlobal)
       player = 1
-      player1.style.display = "inline-block";
-      player2.style.display = "none";
+      displayPlayer1()
     } else {
       playerTwoRound = playerTwoRound + dice
       setImageDice(dice)
@@ -99,8 +97,7 @@ function hold() {
       dice = 0
       updateDisplay(1, dice, playerOneRound, playerOneGlobal)
       player = 2
-      player1.style.display = "none";
-      player2.style.display = "inline-block";
+      displayPlayer2()
     } else {
       swal({
         icon: "success",
@@ -122,8 +119,7 @@ function hold() {
       dice = 0
       updateDisplay(2, dice, playerTwoRound, playerTwoGlobal)
       player = 1
-      player1.style.display = "inline-block";
-      player2.style.display = "none";
+      displayPlayer1()
     } else {
       swal({
         icon: "success",
@@ -144,6 +140,7 @@ function hold() {
 function reset() {
   dice = 0
   player = 1
+  displayPlayer1()
   setImageDice(1)
   playerOneRound = 0
   playerOneGlobal = 0
@@ -151,6 +148,7 @@ function reset() {
   playerTwoGlobal = 0
   updateDisplay('reset', dice, playerOneRound, playerOneGlobal)
 }
+
 
 
 //Affichage dans le DOM
@@ -175,6 +173,18 @@ function updateDisplay(player, diceValue, roundValue, globalValue) {
 
   }
 
+}
+
+//affiche de la pastille rouge du tour du joueur
+
+function displayPlayer1() {
+  player1.style.display = "inline-block";
+  player2.style.display = "none";
+}
+
+function displayPLayer2() {
+  player1.style.display = "none";
+  player2.style.display = "inline-block";
 }
 
 buttonRoll.addEventListener('click', rollDice);
